@@ -46,4 +46,7 @@ void		ss(t_node **head_stack_a, t_node **head_stack_b);
 void		pa(t_node **head_stack_a, t_node **head_stack_b);
 void		pb(t_node **head_stack_a, t_node **head_stack_b);
 
+void		rra(t_node **head_stack_a);
+void		rrb(t_node **head_stack_b);
+void		rrr(t_node **head_stack_a, t_node **head_stack_b);
 #endif

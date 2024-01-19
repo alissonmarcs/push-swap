@@ -30,19 +30,24 @@ int	main(int argc, char *argv[])
 	fill_stack_a(&stack_a, argv);
 	fill_stack_a(&stack_b, argv);
 
-	pb(&stack_a, &stack_b);
+	ft_printf("--- before movements ---\n");
 	ft_printf("stack a: \n");
 	print_stack(stack_a);
 	ft_printf("stack b: \n");
 	print_stack(stack_b);
-	pa(&stack_a, &stack_b);
-	pa(&stack_a, &stack_b);
-	pa(&stack_a, &stack_b);
-	pa(&stack_a, &stack_b);
+
+	ft_printf("-- movements applied ---\n");
+	rrr(&stack_a, &stack_b);
+	rrr(&stack_a, &stack_b);
+	rrr(&stack_a, &stack_b);
+	rrr(&stack_a, &stack_b);
+
+	ft_printf("--- after movements ---\n");
 	ft_printf("stack a: \n");
 	print_stack(stack_a);
 	ft_printf("stack b: \n");
 	print_stack(stack_b);
+
 	free_list(&stack_a);
 	free_list(&stack_b);
 }
