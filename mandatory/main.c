@@ -29,7 +29,16 @@ int	main(int argc, char *argv[])
 	check_args(argc, argv);
 	fill_stack_a(&stack_a, argv);
 	fill_stack_a(&stack_b, argv);
-	ss(&stack_a, &stack_b);
+
+	pb(&stack_a, &stack_b);
+	ft_printf("stack a: \n");
+	print_stack(stack_a);
+	ft_printf("stack b: \n");
+	print_stack(stack_b);
+	pa(&stack_a, &stack_b);
+	pa(&stack_a, &stack_b);
+	pa(&stack_a, &stack_b);
+	pa(&stack_a, &stack_b);
 	ft_printf("stack a: \n");
 	print_stack(stack_a);
 	ft_printf("stack b: \n");

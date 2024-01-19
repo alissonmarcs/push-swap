@@ -43,4 +43,7 @@ void		sa(t_node **head_stack_a);
 void		sb(t_node **head_stack_b);
 void		ss(t_node **head_stack_a, t_node **head_stack_b);
 
+void		pa(t_node **head_stack_a, t_node **head_stack_b);
+void		pb(t_node **head_stack_a, t_node **head_stack_b);
+
 #endif
