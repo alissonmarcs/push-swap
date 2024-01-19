@@ -38,4 +38,9 @@ int			get_list_size(t_node *head);
 void		check_args(int argc, char *argv[]);
 void		fill_stack_a(t_node **head, char *argv[]);
 
+/* push swap moviments */
+void		sa(t_node **head_stack_a);
+void		sb(t_node **head_stack_b);
+void		ss(t_node **head_stack_a, t_node **head_stack_b);
+
 #endif
