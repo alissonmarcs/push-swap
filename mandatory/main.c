@@ -37,10 +37,10 @@ int	main(int argc, char *argv[])
 	print_stack(stack_b);
 
 	ft_printf("-- movements applied ---\n");
-	rrr(&stack_a, &stack_b);
-	rrr(&stack_a, &stack_b);
-	rrr(&stack_a, &stack_b);
-	rrr(&stack_a, &stack_b);
+	rr(&stack_a, &stack_b);
+	rr(&stack_a, &stack_b);
+	rr(&stack_a, &stack_b);
+	rr(&stack_a, &stack_b);
 
 	ft_printf("--- after movements ---\n");
 	ft_printf("stack a: \n");
