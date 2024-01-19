@@ -14,5 +14,12 @@
 
 int	main(int argc, char *argv[])
 {
+	t_node	*stack_a;
+	int		size;
+
 	check_args(argc, argv);
+	fill_stack_a(&stack_a, argv);
+	size = get_list_size(stack_a);
+	ft_printf("%d\n", size);
+	free_list(&stack_a);
 }
