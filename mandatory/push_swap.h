@@ -16,6 +16,8 @@
 
 # include "../libft/libft.h"
 
+# include <limits.h>
+
 typedef struct s_node	t_node;
 struct s_node
 {
@@ -33,5 +35,6 @@ t_node		*get_last_node(t_node **head);
 void		link_node(t_node **head, t_node *node);
 void		free_list(t_node **head);
 int			get_list_size(t_node *head);
+void		check_args(int argc, char *argv[]);
 
 #endif

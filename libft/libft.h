@@ -46,6 +46,7 @@ void				*ft_memchr(const void *s, int c, size_t n);
 
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 
+long				ft_atol(char *str);
 int					ft_atoi(const char *str);
 char				*ft_itoa(int n);
 
