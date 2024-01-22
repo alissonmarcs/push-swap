@@ -30,6 +30,21 @@ void	sort_3(t_node **head)
 		sa(head);
 }
 
+void	set_node_positions(t_node *stack)
+{
+	int	position;
+
+	position = 0;
+	while (1)
+	{
+		stack->position = position;
+		position++;
+		stack = stack->next;
+		if (stack == NULL)
+			return ;
+	}
+}
+
 static	short	get_largest_index(t_node *head)
 {
 	short	index;

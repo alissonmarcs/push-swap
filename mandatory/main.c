@@ -21,7 +21,7 @@ int	main(int argc, char *argv[])
 	check_args(argc, argv);
 	fill_stack_a(&stack_a, argv);
 	set_node_indexes(stack_a, argv);
-	sort_3(&stack_a);
+	set_node_positions(stack_a);
 	print_stack(stack_a);
 	free_list(&stack_a);
 }
@@ -33,6 +33,7 @@ static	void	print_stack(t_node *head)
 		ft_printf("\t-------------------------\n");
 		ft_printf("\t\tnumber: %d\n", head->number);
 		ft_printf("\t\tindex: %d\n", head->index);
+		ft_printf("\t\tposition: %d\n", head->position);
 		ft_printf("\t-------------------------\n");
 		head = head->next;
 	}
