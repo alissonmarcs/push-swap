@@ -54,4 +54,6 @@ void		ra(t_node **head_stack_a);
 void		rb(t_node **head_stack_b);
 void		rr(t_node **head_stack_a, t_node **head_stack_b);
 
+void		set_node_indexes(t_node *head, char *argv[]);
+
 #endif

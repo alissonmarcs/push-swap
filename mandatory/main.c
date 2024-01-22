@@ -16,7 +16,10 @@ void	print_stack(t_node *head)
 {
 	while (head)
 	{
-		ft_printf("%d\n", head->number);
+		ft_printf("\t-------------------------\n");
+		ft_printf("\t\tnumber: %d\n", head->number);
+		ft_printf("\t\tindex: %d\n", head->index);
+		ft_printf("\t-------------------------\n");
 		head = head->next;
 	}
 }
@@ -24,30 +27,10 @@ void	print_stack(t_node *head)
 int	main(int argc, char *argv[])
 {
 	t_node	*stack_a;
-	t_node	*stack_b;
 
 	check_args(argc, argv);
 	fill_stack_a(&stack_a, argv);
-	fill_stack_a(&stack_b, argv);
-
-	ft_printf("--- before movements ---\n");
-	ft_printf("stack a: \n");
+	set_node_indexes(stack_a, argv);
 	print_stack(stack_a);
-	ft_printf("stack b: \n");
-	print_stack(stack_b);
-
-	ft_printf("-- movements applied ---\n");
-	rr(&stack_a, &stack_b);
-	rr(&stack_a, &stack_b);
-	rr(&stack_a, &stack_b);
-	rr(&stack_a, &stack_b);
-
-	ft_printf("--- after movements ---\n");
-	ft_printf("stack a: \n");
-	print_stack(stack_a);
-	ft_printf("stack b: \n");
-	print_stack(stack_b);
-
 	free_list(&stack_a);
-	free_list(&stack_b);
 }
