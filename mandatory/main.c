@@ -21,7 +21,7 @@ int	main(int argc, char *argv[])
 	check_args(argc, argv);
 	fill_stack_a(&stack_a, argv);
 	set_node_indexes(stack_a, argv);
-	ft_printf("is sorted? %d\n", is_sort(stack_a));
+	sort_3(&stack_a);
 	print_stack(stack_a);
 	free_list(&stack_a);
 }

@@ -56,4 +56,8 @@ void		rr(t_node **head_stack_a, t_node **head_stack_b);
 
 void		set_node_indexes(t_node *head, char *argv[]);
 
+/* utils.c */
+short		is_sort(t_node *head);
+void		sort_3(t_node **head);
+
 #endif
