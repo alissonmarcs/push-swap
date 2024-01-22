@@ -21,13 +21,13 @@
 typedef struct s_node	t_node;
 struct s_node
 {
-	int		number;
-	int		index;
-	int		position;
-	int		target_position;
-	int		cost_a;
-	int		cost_b;
-	t_node	*next;
+	int				number;
+	const int		index;
+	int				position;
+	int				target_position;
+	int				cost_a;
+	int				cost_b;
+	t_node			*next;
 };
 
 t_node		*create_node(int number);

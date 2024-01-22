@@ -13,7 +13,7 @@ void	set_node_indexes(t_node *head, char *argv[])
 	while (argv[++index])
 	{
 		node = search_node(head, ft_atoi(argv[index]));
-		node->index = index;
+		*(int *) &node->index = index;
 	}
 }
 
