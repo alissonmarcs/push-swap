@@ -12,7 +12,21 @@
 
 #include "push_swap.h"
 
-void	print_stack(t_node *head)
+static	void	print_stack(t_node *head);
+
+int	main(int argc, char *argv[])
+{
+	t_node	*stack_a;
+
+	check_args(argc, argv);
+	fill_stack_a(&stack_a, argv);
+	set_node_indexes(stack_a, argv);
+	ft_printf("is sorted? %d\n", is_sort(stack_a));
+	print_stack(stack_a);
+	free_list(&stack_a);
+}
+
+static	void	print_stack(t_node *head)
 {
 	while (head)
 	{
@@ -22,15 +36,4 @@ void	print_stack(t_node *head)
 		ft_printf("\t-------------------------\n");
 		head = head->next;
 	}
-}
-
-int	main(int argc, char *argv[])
-{
-	t_node	*stack_a;
-
-	check_args(argc, argv);
-	fill_stack_a(&stack_a, argv);
-	set_node_indexes(stack_a, argv);
-	print_stack(stack_a);
-	free_list(&stack_a);
 }
