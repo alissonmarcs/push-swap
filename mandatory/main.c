@@ -17,13 +17,21 @@ static	void	print_stack(t_node *head);
 int	main(int argc, char *argv[])
 {
 	t_node	*stack_a;
+	t_node	*stack_b;
 
+	stack_a = NULL;
+	stack_b = NULL;
 	check_args(argc, argv);
 	fill_stack_a(&stack_a, argv);
 	set_node_indexes(stack_a, argv);
-	set_node_positions(stack_a);
+	ft_printf("\t\tMovements:\n");
+	move_all_but_three(&stack_a, &stack_b);
+	ft_printf("\v\v\v\t\tStack a:\n");
 	print_stack(stack_a);
+	ft_printf("\v\v\v\t\tStack b:\n");
+	print_stack(stack_b);
 	free_list(&stack_a);
+	free_list(&stack_b);
 }
 
 static	void	print_stack(t_node *head)
@@ -31,9 +39,9 @@ static	void	print_stack(t_node *head)
 	while (head)
 	{
 		ft_printf("\t-------------------------\n");
-		ft_printf("\t\tnumber: %d\n", head->number);
-		ft_printf("\t\tindex: %d\n", head->index);
-		ft_printf("\t\tposition: %d\n", head->position);
+		ft_printf("\t\tNumber: %d\n", head->number);
+		ft_printf("\t\tIndex: %d\n", head->index);
+		ft_printf("\t\tPosition: %d\n", head->position);
 		ft_printf("\t-------------------------\n");
 		head = head->next;
 	}

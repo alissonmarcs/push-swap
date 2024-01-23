@@ -61,4 +61,6 @@ short		is_sort(t_node *head);
 void		sort_3(t_node **head);
 void		set_node_positions(t_node *stack);
 
+void		move_all_but_three(t_node **head_stack_a, t_node **head_stack_b);
+
 #endif
