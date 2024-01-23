@@ -23,6 +23,11 @@ int	main(int argc, char *argv[])
 	stack_b = NULL;
 	check_args(argc, argv);
 	fill_stack_a(&stack_a, argv);
+	if (is_sort(stack_a) == 1)
+	{
+		free_list(&stack_a);
+		exit(EXIT_SUCCESS);
+	}
 	set_node_indexes(stack_a, argv);
 	ft_printf("\t\tMovements:\n");
 	move_all_but_three(&stack_a, &stack_b);
