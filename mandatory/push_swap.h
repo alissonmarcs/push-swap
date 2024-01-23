@@ -63,4 +63,6 @@ void		set_node_positions(t_node *stack);
 
 void		move_all_but_three(t_node **head_stack_a, t_node **head_stack_b);
 
+void		set_target_position(t_node *stack_a, t_node *stack_b);
+
 #endif
