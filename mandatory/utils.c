@@ -15,7 +15,7 @@ short	is_sort(t_node *head)
 	}
 }
 
-void	sort_3(t_node **head)
+void	sort_three_elements(t_node **head)
 {
 	short	largest_index;
 
