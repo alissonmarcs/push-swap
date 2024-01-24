@@ -30,11 +30,7 @@ int	main(int argc, char *argv[])
 	}
 	set_node_indexes(stack_a, argv);
 	ft_printf("\t\tMovements:\n");
-	move_all_but_three(&stack_a, &stack_b);
-	set_node_positions(stack_a);
-	set_node_positions(stack_b);
-	set_target_position(stack_a, stack_b);
-	set_costs(stack_a, stack_b);
+	sort(&stack_a, &stack_b);
 	ft_printf("\v\v\v\t\tStack a:\n");
 	print_stack(stack_a);
 	ft_printf("\v\v\v\t\tStack b:\n");
