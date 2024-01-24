@@ -7,7 +7,7 @@ OBJECTS_FOLDER = ./obj/
 MANDATORY_FOLDER = ./mandatory/
 MANDATORY_SOURCES = $(addprefix $(OBJECTS_FOLDER), main.c linked_lists.c check_args.c \
 	initializations.c swap.c push.c reverse_rotate.c rotate.c set_node_indexes.c utils.c \
-	set_target_position.c)
+	set_target_position.c set_costs.c)
 MANDATORY_OBJECTS = $(subst $(MANDATORY_FOLDER),$(OBJECTS_FOLDER),$(MANDATORY_SOURCES:.c=.o))
 
 all: $(OBJECTS_FOLDER) $(LIBFT) $(NAME)
