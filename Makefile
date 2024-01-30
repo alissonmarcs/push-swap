@@ -15,6 +15,9 @@ all: $(OBJECTS_FOLDER) $(LIBFT) $(NAME)
 $(OBJECTS_FOLDER):
 	mkdir $(OBJECTS_FOLDER)
 
+$(OBJECTS_FOLDER)%.o: mandatory/movements/%.c
+	cc $(CFLAGS) -c $< -o $@ -I ./mandatory
+
 $(LIBFT):
 	make -C ./libft/
 
