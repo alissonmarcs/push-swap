@@ -12,8 +12,6 @@
 
 #include "push_swap.h"
 
-static	void	print_stack(t_node *head);
-
 int	main(int argc, char *argv[])
 {
 	t_node	*stack_a;
@@ -31,20 +29,4 @@ int	main(int argc, char *argv[])
 	set_node_indexes(stack_a, argv);
 	sort(&stack_a, &stack_b);
 	free_list(&stack_a);
-}
-
-static	void	print_stack(t_node *head)
-{
-	while (head)
-	{
-		ft_printf("\t-------------------------------\n");
-		ft_printf("\t\tNumber: %d\n", head->number);
-		ft_printf("\t\tIndex: %d\n", head->index);
-		ft_printf("\t\tPosition: %d\n", head->position);
-		ft_printf("\t\tTarget position: %d\n", head->target_position);
-		ft_printf("\t\tCost a: %d\n", head->cost_a);
-		ft_printf("\t\tCost b: %d\n", head->cost_b);
-		ft_printf("\t-------------------------------\n");
-		head = head->next;
-	}
 }
