@@ -67,5 +67,6 @@ void		set_target_position(t_node *stack_a, t_node *stack_b);
 void		set_costs(t_node *stack_a, t_node *stack_b);
 void		sort(t_node **head_stack_a, t_node **head_stack_b);
 void		perform_movements(t_node **stack_a, t_node **stack_b);
+int			get_smaller_index_position(t_node *stack_a);
 
 #endif

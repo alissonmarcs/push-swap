@@ -1,6 +1,5 @@
 #include "push_swap.h"
 
-static	int	get_smaller_index_position(t_node *stack_a);
 static	int	get_target_position(t_node *stack_a, int b_index);
 
 void	set_target_position(t_node *stack_a, t_node *stack_b)
@@ -35,7 +34,7 @@ static	int	get_target_position(t_node *stack_a, int b_index)
 	return (target_position);
 }
 
-static	int	get_smaller_index_position(t_node *stack_a)
+int	get_smaller_index_position(t_node *stack_a)
 {
 	int		smaller_index;
 	t_node	*target;
