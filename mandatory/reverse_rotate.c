@@ -17,18 +17,18 @@ static	void	reverse_rotate(t_node **head)
 void	rra(t_node **head_stack_a)
 {
 	reverse_rotate(head_stack_a);
-	ft_putstr_fd("ra\n", 1);
+	ft_putstr_fd("rra\n", 1);
 }
 
 void	rrb(t_node **head_stack_b)
 {
 	reverse_rotate(head_stack_b);
-	ft_putstr_fd("rb\n", 1);
+	ft_putstr_fd("rrb\n", 1);
 }
 
 void	rrr(t_node **head_stack_a, t_node **head_stack_b)
 {
 	reverse_rotate(head_stack_a);
 	reverse_rotate(head_stack_b);
-	ft_putstr_fd("rr\n", 1);
+	ft_putstr_fd("rrr\n", 1);
 }
