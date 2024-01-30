@@ -21,6 +21,9 @@ $(OBJECTS_FOLDER)%.o: mandatory/movements/%.c
 $(OBJECTS_FOLDER)%.o: mandatory/algorithm/%.c
 	cc $(CFLAGS) -c $< -o $@ -I ./mandatory
 
+$(OBJECTS_FOLDER)%.o: mandatory/init/%.c
+	cc $(CFLAGS) -c $< -o $@ -I ./mandatory
+
 $(LIBFT):
 	make -C ./libft/
 

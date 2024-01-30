@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include <push_swap.h>
 
 static	void	error(void);
 static	void	check_duplicates(long current_number, char *argv[]);
