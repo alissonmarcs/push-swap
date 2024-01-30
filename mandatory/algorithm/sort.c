@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include <push_swap.h>
 
 static	void		shift(t_node **stack_a);
 static	void		sort_more_than_three(t_node **head_stack_a, t_node **head_stack_b);

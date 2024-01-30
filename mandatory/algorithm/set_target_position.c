@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include <push_swap.h>
 
 static	int	get_target_position(t_node *stack_a, int b_index);
 

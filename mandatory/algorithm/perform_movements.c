@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include <push_swap.h>
 
 static	t_node	*find_cheapest(t_node *stack_b);
 static	void	move_stack_a(t_node **stack_a, t_node *to_move);

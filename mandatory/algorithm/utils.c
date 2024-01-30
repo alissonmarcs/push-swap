@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include <push_swap.h>
 
 static	short	get_largest_index(t_node *head);
 

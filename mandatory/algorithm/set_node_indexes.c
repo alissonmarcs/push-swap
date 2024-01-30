@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include <push_swap.h>
 
 static	void	sort_argv_strings(char *argv[]);
 static	t_node	*search_node(t_node *head, int number);

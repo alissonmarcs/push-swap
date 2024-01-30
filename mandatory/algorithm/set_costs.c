@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include <push_swap.h>
 
 void	set_costs(t_node *stack_a, t_node *stack_b)
 {
