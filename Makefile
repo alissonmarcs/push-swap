@@ -24,9 +24,6 @@ $(NAME): $(MANDATORY_OBJECTS) $(MANDATORY_FOLDER)push_swap.h
 $(OBJECTS_FOLDER)%.o: $(MANDATORY_FOLDER)%.c $(MANDATORY_FOLDER)push_swap.h
 	cc $(CFLAGS) -c $< -o $@
 
-val:
-	valgrind -q --leak-check=full --show-leak-kinds=all --track-origins=yes ./push_swap
-
 clean:
 	rm -rf $(OBJECTS_FOLDER)*
 
@@ -35,5 +32,4 @@ fclean: clean
 
 re: fclean all
 
-
-.PHONY: all clean fclean re val
+.PHONY: all clean fclean re
