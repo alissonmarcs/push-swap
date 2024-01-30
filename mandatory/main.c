@@ -29,14 +29,8 @@ int	main(int argc, char *argv[])
 		exit(EXIT_SUCCESS);
 	}
 	set_node_indexes(stack_a, argv);
-	ft_printf("\t\tMovements:\n");
 	sort(&stack_a, &stack_b);
-	ft_printf("\v\v\v\t\tStack a:\n");
-	print_stack(stack_a);
-	ft_printf("\v\v\v\t\tStack b:\n");
-	print_stack(stack_b);
 	free_list(&stack_a);
-	free_list(&stack_b);
 }
 
 static	void	print_stack(t_node *head)
