@@ -14,6 +14,8 @@ void	check_args(int argc, char *argv[])
 	i = 0;
 	while (argv[++i])
 	{
+		if (argv[i][0] == '\0')
+			error();
 		check_string_number(argv[i]);
 		current_number = ft_atol(argv[i]);
 		if (current_number < INT_MIN || current_number > INT_MAX)
@@ -51,10 +53,15 @@ static	void	check_string_number(char *str)
 	int	i;
 
 	i = 0;
-	if (str[i] == '+' || str[i] == '-')
-		i++;
-	while (ft_isdigit(str[i]))
-		i++;
-	if (str[i] != '\0')
-		error();
+	while (str[i])
+	{
+		if (str[i] == '+' || str[i] == '-')
+			i++;
+		while (str[i] == ' ')
+			i++;
+		while (ft_isdigit(str[i]))
+			i++;
+		if (!ft_isdigit(str[i]) && str[i] != ' ' && str[i])
+			error();
+	}
 }
