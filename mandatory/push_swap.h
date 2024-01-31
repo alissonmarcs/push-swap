@@ -35,7 +35,7 @@ t_node		*get_last_node(t_node **head);
 void		link_node(t_node **head, t_node *node);
 void		free_list(t_node **head);
 int			get_list_size(t_node *head);
-void		check_args(int argc, char *argv[]);
+void		check_args(char *argv[]);
 void		fill_stack_a(t_node **head, char *argv[]);
 
 /* push swap moviments */
