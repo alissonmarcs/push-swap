@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   set_costs.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: almarcos <almarcos@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/02 16:42:28 by almarcos          #+#    #+#             */
+/*   Updated: 2024/02/02 16:42:44 by almarcos         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <push_swap.h>
 
 void	set_costs(t_node *stack_a, t_node *stack_b)
 {
-	int size_a;
-	int size_b;
+	int	size_a;
+	int	size_b;
 
 	size_a = get_list_size(stack_a);
 	size_b = get_list_size(stack_b);

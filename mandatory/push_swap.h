@@ -6,7 +6,7 @@
 /*   By: almarcos <almarcos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 08:58:24 by almarcos          #+#    #+#             */
-/*   Updated: 2024/01/08 09:18:36 by almarcos         ###   ########.fr       */
+/*   Updated: 2024/02/02 16:44:45 by almarcos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 typedef struct s_node	t_node;
 struct s_node
 {
-	long				number;
+	long			number;
 	const int		index;
 	int				position;
 	int				target_position;

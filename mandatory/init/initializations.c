@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   initializations.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: almarcos <almarcos@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/02 16:25:12 by almarcos          #+#    #+#             */
+/*   Updated: 2024/02/02 16:25:13 by almarcos         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <push_swap.h>
 
 static	int	check_duplicates(t_node *stack_a, long number)
@@ -23,8 +35,8 @@ void	check_numbers(t_node **stack_a)
 	current = *stack_a;
 	while (current)
 	{
-		if ((current->number < INT_MIN || current->number > INT_MAX) ||
-			check_duplicates(*stack_a, current->number))
+		if ((current->number < INT_MIN || current->number > INT_MAX)
+			|| check_duplicates(*stack_a, current->number))
 		{
 			free_list(stack_a);
 			error();

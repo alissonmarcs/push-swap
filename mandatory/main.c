@@ -13,7 +13,7 @@
 #include "push_swap.h"
 #include <stdio.h>
 
-void print_stack(t_node *head);
+void	print_stack(t_node *head);
 
 int	main(int argc, char *argv[])
 {
@@ -30,7 +30,7 @@ int	main(int argc, char *argv[])
 	free_list(&stack_a);
 }
 
-void print_stack(t_node *head)
+void	print_stack(t_node *head)
 {
 	while (head)
 	{

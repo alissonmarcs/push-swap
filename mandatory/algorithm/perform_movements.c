@@ -1,9 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   perform_movements.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: almarcos <almarcos@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/02 16:32:47 by almarcos          #+#    #+#             */
+/*   Updated: 2024/02/02 16:47:53 by almarcos         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <push_swap.h>
 
-static	t_node	*find_cheapest(t_node *stack_b);
-static	void	move_stack_a(t_node **stack_a, t_node *to_move);
-static	void	move_stack_b(t_node **stack_b, t_node *to_move);
-static	void	move_both_stacks(t_node **stack_a, t_node **stack_b, t_node *to_move);
+static t_node	*find_cheapest(t_node *stack_b);
+static void		move_stack_a(t_node **stack_a, t_node *to_move);
+static void		move_stack_b(t_node **stack_b, t_node *to_move);
+static void		move_both_stacks(t_node **stack_a, t_node **stack_b,
+					t_node *to_move);
 
 void	perform_movements(t_node **stack_a, t_node **stack_b)
 {
@@ -40,49 +53,62 @@ static	t_node	*find_cheapest(t_node *stack_b)
 static	void	move_stack_a(t_node **stack_a, t_node *to_move)
 {
 	if (to_move->cost_a > 0)
+	{
 		while (to_move->cost_a > 0)
 		{
 			to_move->cost_a--;
 			ra(stack_a);
 		}
+	}
 	else if (to_move->cost_a < 0)
+	{
 		while (to_move->cost_a < 0)
 		{
 			to_move->cost_a++;
 			rra(stack_a);
 		}
+	}
 }
 
 static	void	move_stack_b(t_node **stack_b, t_node *to_move)
 {
 	if (to_move->cost_b > 0)
+	{
 		while (to_move->cost_b > 0)
 		{
 			to_move->cost_b--;
 			rb(stack_b);
 		}
+	}
 	else if (to_move->cost_b < 0)
+	{
 		while (to_move->cost_b < 0)
 		{
 			to_move->cost_b++;
 			rrb(stack_b);
 		}
+	}
 }
 
-static	void	move_both_stacks(t_node **stack_a, t_node **stack_b, t_node *to_move)
+static	void	move_both_stacks(t_node **stack_a, t_node **stack_b,
+					t_node *to_move)
 {
 	if (to_move->cost_a < 0 && to_move->cost_b < 0)
+	{
 		while (to_move->cost_a && to_move->cost_b)
 		{
 			to_move->cost_a++;
 			to_move->cost_b++;
 			rrr(stack_a, stack_b);
 		}
+	}
 	if (to_move->cost_a > 0 && to_move->cost_b > 0)
+	{
 		while (to_move->cost_a && to_move->cost_b)
 		{
 			to_move->cost_a--;
 			to_move->cost_b--;
 			rr(stack_a, stack_b);
 		}
+	}
 }

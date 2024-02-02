@@ -1,7 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: almarcos <almarcos@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/02 16:26:00 by almarcos          #+#    #+#             */
+/*   Updated: 2024/02/02 16:32:02 by almarcos         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <push_swap.h>
 
 static	void		shift(t_node **stack_a);
-static	void		sort_more_than_three(t_node **head_stack_a, t_node **head_stack_b);
+static	void		sort_more_than_three(t_node **head_stack_a,
+						t_node **head_stack_b);
 
 void	sort(t_node **head_stack_a, t_node **head_stack_b)
 {
@@ -16,7 +29,8 @@ void	sort(t_node **head_stack_a, t_node **head_stack_b)
 		sort_more_than_three(head_stack_a, head_stack_b);
 }
 
-static	void	sort_more_than_three(t_node **head_stack_a, t_node **head_stack_b)
+static	void	sort_more_than_three(t_node **head_stack_a,
+					t_node **head_stack_b)
 {
 	move_all_but_three(head_stack_a, head_stack_b);
 	sort_three_elements(head_stack_a);
