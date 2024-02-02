@@ -1,5 +1,43 @@
 #include <push_swap.h>
 
+static	int	check_duplicates(t_node *stack_a, long number)
+{
+	short	ocorrences;
+
+	ocorrences = 0;
+	while (stack_a)
+	{
+		if (stack_a->number == number)
+			ocorrences++;
+		if (ocorrences > 1)
+			return (1);
+		stack_a = stack_a->next;
+	}
+	return (0);
+}
+
+void	check_numbers(t_node **stack_a)
+{
+	t_node	*current;
+
+	current = *stack_a;
+	while (current)
+	{
+		if ((current->number < INT_MIN || current->number > INT_MAX) ||
+			check_duplicates(*stack_a, current->number))
+		{
+			free_list(stack_a);
+			error();
+		}
+		current = current->next;
+	}
+	if (is_sort(*stack_a))
+	{
+		free_list(stack_a);
+		exit(EXIT_SUCCESS);
+	}
+}
+
 void	fill_stack_a(t_node **head, char *argv[])
 {
 	t_node	*current_node;
