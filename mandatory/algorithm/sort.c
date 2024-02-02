@@ -38,12 +38,12 @@ static	void	shift(t_node **stack_a)
 	int	smaller;
 
 	size = get_list_size(*stack_a);
-	smaller = get_smaller_index_position(*stack_a);
 	while (1)
 	{
-		if (get_smaller_index_position(*stack_a) == 0)
+		smaller = get_smaller_index_position(*stack_a);
+		if (smaller == 0)
 			return ;
-		if (smaller < size / 2)
+		if (smaller <= size / 2)
 			ra(stack_a);
 		else
 			rra(stack_a);
