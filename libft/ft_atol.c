@@ -7,6 +7,8 @@ long	ft_atol(char *str)
 
 	sign = 1;
 	result = 0;
+	while (*str == ' ' || (*str >= 9 && *str <= 13))
+		str++;
 	if (*str == '+' || *str == '-')
 		sign = 1 - 2 * (*str++ == '-');
 	while (ft_isdigit(*str))
