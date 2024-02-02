@@ -2,12 +2,12 @@ NAME = push_swap
 LIBFT = ./libft/libft.a
 CFLAGS = -Wall -Werror -Wextra -g3 -O0
 
-MANDATORY_SOURCES = $(addprefix ./obj/, main.c linked_lists.c check_args.c \
-	initializations.c swap.c push.c reverse_rotate.c rotate.c set_node_indexes.c utils.c \
-	set_target_position.c set_costs.c sort.c perform_movements.c)
-MANDATORY_OBJECTS = $(subst ./mandatory/,./obj/,$(MANDATORY_SOURCES:.c=.o))
+MANDATORY_SOURCES = main.c linked_lists.c check_args.c initializations.c \
+	swap.c push.c reverse_rotate.c rotate.c set_node_indexes.c utils.c \
+	set_target_position.c set_costs.c sort.c perform_movements.c
+MANDATORY_OBJECTS = $(addprefix ./obj/,$(MANDATORY_SOURCES:.c=.o))
 
-all: ./obj/ $(LIBFT) $(NAME)
+all: ./obj/ libft $(NAME)
 
 ./obj/:
 	mkdir ./obj/
@@ -21,14 +21,14 @@ all: ./obj/ $(LIBFT) $(NAME)
 ./obj/%.o: mandatory/init/%.c ./includes/push_swap.h
 	cc $(CFLAGS) -c $< -o $@ -I ./includes/
 
-$(LIBFT):
-	make -C ./libft/
+./obj/%.o: ./mandatory/%.c ./includes/push_swap.h
+	cc $(CFLAGS) -c $< -o $@ -I ./includes/
+
+libft:
+	@make -s -C ./libft/
 
 $(NAME): $(MANDATORY_OBJECTS) ./includes/push_swap.h
 	cc $(CFLAGS) $(MANDATORY_OBJECTS) $(LIBFT) -o $(NAME)
-
-./obj/%.o: ./mandatory/%.c ./includes/push_swap.h
-	cc $(CFLAGS) -c $< -o $@ -I ./includes/
 
 clean:
 	rm -rf ./obj/
@@ -38,4 +38,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re libft
