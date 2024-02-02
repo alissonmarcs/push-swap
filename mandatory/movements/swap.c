@@ -14,21 +14,21 @@ static	void	swap(t_node **head)
 	old_head->next = third_node;
 }
 
-void	sa(t_node **head_stack_a)
+void	sa(t_node **stack_a)
 {
-	swap(head_stack_a);
+	swap(stack_a);
 	ft_putstr_fd("sa\n", 1);
 }
 
-void	sb(t_node **head_stack_b)
+void	sb(t_node **stack_b)
 {
-	swap(head_stack_b);
+	swap(stack_b);
 	ft_putstr_fd("sb\n", 1);
 }
 
-void	ss(t_node **head_stack_a, t_node **head_stack_b)
+void	ss(t_node **stack_a, t_node **stack_b)
 {
-	sa(head_stack_a);
-	sb(head_stack_b);
+	sa(stack_a);
+	sb(stack_b);
 	ft_putstr_fd("ss\n", 1);
 }

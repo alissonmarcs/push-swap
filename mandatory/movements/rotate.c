@@ -14,21 +14,21 @@ static	void	rotate(t_node **head)
 	new_tail->next = NULL;
 }
 
-void	ra(t_node **head_stack_a)
+void	ra(t_node **stack_a)
 {
-	rotate(head_stack_a);
+	rotate(stack_a);
 	ft_putstr_fd("ra\n", 1);
 }
 
-void	rb(t_node **head_stack_b)
+void	rb(t_node **stack_b)
 {
-	rotate(head_stack_b);
+	rotate(stack_b);
 	ft_putstr_fd("rb\n", 1);
 }
 
-void	rr(t_node **head_stack_a, t_node **head_stack_b)
+void	rr(t_node **stack_a, t_node **stack_b)
 {
-	rotate(head_stack_a);
-	rotate(head_stack_b);
+	rotate(stack_a);
+	rotate(stack_b);
 	ft_putstr_fd("rr\n", 1);
 }

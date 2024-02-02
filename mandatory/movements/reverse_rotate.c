@@ -14,21 +14,21 @@ static	void	reverse_rotate(t_node **head)
 	last_but_one->next = NULL;
 }
 
-void	rra(t_node **head_stack_a)
+void	rra(t_node **stack_a)
 {
-	reverse_rotate(head_stack_a);
+	reverse_rotate(stack_a);
 	ft_putstr_fd("rra\n", 1);
 }
 
-void	rrb(t_node **head_stack_b)
+void	rrb(t_node **stack_b)
 {
-	reverse_rotate(head_stack_b);
+	reverse_rotate(stack_b);
 	ft_putstr_fd("rrb\n", 1);
 }
 
-void	rrr(t_node **head_stack_a, t_node **head_stack_b)
+void	rrr(t_node **stack_a, t_node **stack_b)
 {
-	reverse_rotate(head_stack_a);
-	reverse_rotate(head_stack_b);
+	reverse_rotate(stack_a);
+	reverse_rotate(stack_b);
 	ft_putstr_fd("rrr\n", 1);
 }

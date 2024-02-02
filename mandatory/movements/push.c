@@ -1,23 +1,23 @@
 #include <push_swap.h>
 
-static	void	push(t_node **from, t_node **to)
+static	void	push(t_node **source, t_node **dest)
 {
-	t_node	*new_head;
+	t_node	*head_dest;
 
-	new_head = *from;
-	*from = (*from)->next;
-	new_head->next = *to;
-	*to = new_head;
+	head_dest = *source;
+	*source = (*source)->next;
+	head_dest->next = *dest;
+	*dest = head_dest;
 }
 
-void	pa(t_node **head_stack_a, t_node **head_stack_b)
+void	pa(t_node **stack_a, t_node **stack_b)
 {
-	push(head_stack_b, head_stack_a);
+	push(stack_b, stack_a);
 	ft_putstr_fd("pa\n", 1);
 }
 
-void	pb(t_node **head_stack_a, t_node **head_stack_b)
+void	pb(t_node **stack_a, t_node **stack_b)
 {
-	push(head_stack_a, head_stack_b);
+	push(stack_a, stack_b);
 	ft_putstr_fd("pb\n", 1);
 }

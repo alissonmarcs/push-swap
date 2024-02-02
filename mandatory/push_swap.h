@@ -39,20 +39,20 @@ void		check_args(char *argv[]);
 void		fill_stack_a(t_node **head, char *argv[]);
 
 /* push swap moviments */
-void		sa(t_node **head_stack_a);
-void		sb(t_node **head_stack_b);
-void		ss(t_node **head_stack_a, t_node **head_stack_b);
+void		sa(t_node **stack_a);
+void		sb(t_node **stack_b);
+void		ss(t_node **stack_a, t_node **stack_b);
 
-void		pa(t_node **head_stack_a, t_node **head_stack_b);
-void		pb(t_node **head_stack_a, t_node **head_stack_b);
+void		pa(t_node **stack_a, t_node **stack_b);
+void		pb(t_node **stack_a, t_node **stack_b);
 
-void		rra(t_node **head_stack_a);
-void		rrb(t_node **head_stack_b);
-void		rrr(t_node **head_stack_a, t_node **head_stack_b);
+void		rra(t_node **stack_a);
+void		rrb(t_node **stack_b);
+void		rrr(t_node **stack_a, t_node **stack_b);
 
-void		ra(t_node **head_stack_a);
-void		rb(t_node **head_stack_b);
-void		rr(t_node **head_stack_a, t_node **head_stack_b);
+void		ra(t_node **stack_a);
+void		rb(t_node **stack_b);
+void		rr(t_node **stack_a, t_node **stack_b);
 
 void		set_node_indexes(t_node *head, char *argv[]);
 
