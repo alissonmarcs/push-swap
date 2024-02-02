@@ -1,6 +1,5 @@
 #include <push_swap.h>
 
-static	void	error(void);
 static	void	check_string_number(char *str);
 
 void	check_args(char *argv[])
@@ -16,7 +15,7 @@ void	check_args(char *argv[])
 	}
 }
 
-static	void	error(void)
+void	error(void)
 {
 	ft_putstr_fd("Error\n", 2);
 	exit(EXIT_FAILURE);
