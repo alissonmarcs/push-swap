@@ -11,6 +11,9 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
+
+void print_stack(t_node *head);
 
 int	main(int argc, char *argv[])
 {
@@ -21,12 +24,19 @@ int	main(int argc, char *argv[])
 	stack_b = NULL;
 	check_args(argc, argv);
 	fill_stack_a(&stack_a, argv);
-	if (is_sort(stack_a) == 1)
-	{
-		free_list(&stack_a);
-		exit(EXIT_SUCCESS);
-	}
-	set_node_indexes(stack_a, argv);
+	check_numbers(&stack_a);
+	set_node_indexes(stack_a, get_list_size(stack_a));
 	sort(&stack_a, &stack_b);
 	free_list(&stack_a);
+}
+
+void print_stack(t_node *head)
+{
+	while (head)
+	{
+		ft_printf("\t------------------------\n");
+		ft_printf("\t\tNumber: %d\n", head->number);
+		ft_printf("\t\tIndex: %d\n", head->index);
+		head = head->next;
+	}
 }
