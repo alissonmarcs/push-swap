@@ -28,6 +28,7 @@ static	void	sort_more_than_three(t_node **head_stack_a, t_node **head_stack_b)
 		set_costs(*head_stack_a, *head_stack_b);
 		perform_movements(head_stack_a, head_stack_b);
 	}
+	set_node_positions(*head_stack_a);
 	shift(head_stack_a);
 }
 
