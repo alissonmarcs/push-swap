@@ -2,18 +2,23 @@
 
 void	fill_stack_a(t_node **head, char *argv[])
 {
-	t_node	*stack_a;
 	t_node	*current_node;
+	char	**split;
 	int		i;
+	int		j;
 
-	stack_a = NULL;
 	i = 0;
 	while (argv[++i])
 	{
-		current_node = create_node(ft_atoi(argv[i]));
-		link_node(&stack_a, current_node);
+		split = ft_split(argv[i], ' ');
+		j = -1;
+		while (split[++j])
+		{
+			current_node = create_node(ft_atol(split[j]));
+			link_node(head, current_node);
+		}
+		ft_free_split(split);
 	}
-	*head = stack_a;
 }
 
 void	move_all_but_three(t_node **head_stack_a, t_node **head_stack_b)
