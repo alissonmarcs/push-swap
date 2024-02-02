@@ -1,17 +1,22 @@
 #include <push_swap.h>
 
-static	void	check_string_number(char *str);
-
-void	check_args(char *argv[])
+static	void	check_string_number(char *str)
 {
-	int		i;
+	int	i;
 
 	i = 0;
-	while (argv[++i])
+	while (str[i])
 	{
-		if (argv[i][0] == '\0')
+		while (str[i] == ' ')
+			i++;
+		if ((str[i] == '+' || str[i] == '-') && !ft_isdigit(str[i + 1]))
 			error();
-		check_string_number(argv[i]);
+		if (str[i] == '+' || str[i] == '-')
+			i++;
+		while (ft_isdigit(str[i]))
+			i++;
+		if (str[i] && str[i] != ' ' && str[i] != '-' && str[i] != '+')
+			error();
 	}
 }
 
@@ -21,20 +26,17 @@ void	error(void)
 	exit(EXIT_FAILURE);
 }
 
-static	void	check_string_number(char *str)
+void	check_args(int argc, char *argv[])
 {
-	int	i;
+	int		i;
 
+	if (argc == 1)
+		exit(EXIT_SUCCESS);
 	i = 0;
-	while (str[i])
+	while (argv[++i])
 	{
-		if (str[i] == '+' || str[i] == '-')
-			i++;
-		while (str[i] == ' ')
-			i++;
-		while (ft_isdigit(str[i]))
-			i++;
-		if (!ft_isdigit(str[i]) && str[i] != ' ' && str[i])
+		if (argv[i][0] == '\0')
 			error();
+		check_string_number(argv[i]);
 	}
 }
