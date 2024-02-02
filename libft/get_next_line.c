@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
 
 static char	*ft_read_file(int fd, char *buffer);
 static char	*ft_make_line(char *content);

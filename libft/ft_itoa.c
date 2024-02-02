@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
 
 static int		ft_is_negative(long n);
 static size_t	ft_count_digits(long n);

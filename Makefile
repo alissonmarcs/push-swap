@@ -2,39 +2,36 @@ NAME = push_swap
 LIBFT = ./libft/libft.a
 CFLAGS = -Wall -Werror -Wextra -g3 -O0
 
-OBJECTS_FOLDER = ./obj/
-
-MANDATORY_FOLDER = ./mandatory/
-MANDATORY_SOURCES = $(addprefix $(OBJECTS_FOLDER), main.c linked_lists.c check_args.c \
+MANDATORY_SOURCES = $(addprefix ./obj/, main.c linked_lists.c check_args.c \
 	initializations.c swap.c push.c reverse_rotate.c rotate.c set_node_indexes.c utils.c \
 	set_target_position.c set_costs.c sort.c perform_movements.c)
-MANDATORY_OBJECTS = $(subst $(MANDATORY_FOLDER),$(OBJECTS_FOLDER),$(MANDATORY_SOURCES:.c=.o))
+MANDATORY_OBJECTS = $(subst ./mandatory/,./obj/,$(MANDATORY_SOURCES:.c=.o))
 
-all: $(OBJECTS_FOLDER) $(LIBFT) $(NAME)
+all: ./obj/ $(LIBFT) $(NAME)
 
-$(OBJECTS_FOLDER):
-	mkdir $(OBJECTS_FOLDER)
+./obj/:
+	mkdir ./obj/
 
-$(OBJECTS_FOLDER)%.o: mandatory/movements/%.c
-	cc $(CFLAGS) -c $< -o $@ -I ./mandatory
+./obj/%.o: mandatory/movements/%.c ./includes/push_swap.h
+	cc $(CFLAGS) -c $< -o $@ -I ./includes/
 
-$(OBJECTS_FOLDER)%.o: mandatory/algorithm/%.c
-	cc $(CFLAGS) -c $< -o $@ -I ./mandatory
+./obj/%.o: mandatory/algorithm/%.c ./includes/push_swap.h
+	cc $(CFLAGS) -c $< -o $@ -I ./includes/
 
-$(OBJECTS_FOLDER)%.o: mandatory/init/%.c
-	cc $(CFLAGS) -c $< -o $@ -I ./mandatory
+./obj/%.o: mandatory/init/%.c ./includes/push_swap.h
+	cc $(CFLAGS) -c $< -o $@ -I ./includes/
 
 $(LIBFT):
 	make -C ./libft/
 
-$(NAME): $(MANDATORY_OBJECTS) $(MANDATORY_FOLDER)push_swap.h
+$(NAME): $(MANDATORY_OBJECTS) ./includes/push_swap.h
 	cc $(CFLAGS) $(MANDATORY_OBJECTS) $(LIBFT) -o $(NAME)
 
-$(OBJECTS_FOLDER)%.o: $(MANDATORY_FOLDER)%.c $(MANDATORY_FOLDER)push_swap.h
-	cc $(CFLAGS) -c $< -o $@
+./obj/%.o: ./mandatory/%.c ./includes/push_swap.h
+	cc $(CFLAGS) -c $< -o $@ -I ./includes/
 
 clean:
-	rm -rf $(OBJECTS_FOLDER)*
+	rm -rf ./obj/
 
 fclean: clean
 	rm -rf $(NAME)

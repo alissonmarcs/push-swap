@@ -43,8 +43,8 @@ $(OBJECTS_FOLDER):
 
 $(NAME): $(OBJECTS) $(GNL_OBJECT) $(FT_PRINTF_OBJECT)
 
-$(OBJECTS_FOLDER)%.o: %.c libft.h
-	cc $(CFLAGS) -c $< -o $@
+$(OBJECTS_FOLDER)%.o: %.c ../includes/libft.h
+	cc $(CFLAGS) -c $< -o $@ -I ../includes
 	ar rcs $(NAME) $@
 
 clean:

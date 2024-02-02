@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
 
 static short	ft_word_count(const char *s, int c);
 static char		**ft_alloc_words(char **array, const char *s, int c);
