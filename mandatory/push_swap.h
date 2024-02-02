@@ -54,7 +54,7 @@ void		ra(t_node **stack_a);
 void		rb(t_node **stack_b);
 void		rr(t_node **stack_a, t_node **stack_b);
 
-void		set_node_indexes(t_node *head, char *argv[]);
+void		set_node_indexes(t_node *head, int stack_size);
 
 /* utils.c */
 short		is_sort(t_node *head);

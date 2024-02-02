@@ -1,51 +1,30 @@
 #include <push_swap.h>
 
-static	void	sort_argv_strings(char *argv[]);
-static	t_node	*search_node(t_node *head, int number);
-
-void	set_node_indexes(t_node *head, char *argv[])
+void	set_node_indexes(t_node *head, int stack_size)
 {
-	int		index;
-	t_node	*node;
+	t_node	*larger;
+	t_node	*head_ref;
+	long	current_larger;
 
-	index = 0;
-	sort_argv_strings(argv);
-	while (argv[++index])
+	head_ref = head;
+	while (stack_size)
 	{
-		node = search_node(head, ft_atoi(argv[index]));
-		*(int *) &node->index = index;
-	}
-}
-
-static	void	sort_argv_strings(char *argv[])
-{
-	int		i;
-	int		j;
-	char	*tmp;
-
-	i = 0;
-	while (argv[++i])
-	{
-		j = i;
-		while (argv[++j])
+		current_larger = INT_MIN;
+		larger = NULL;
+		while (head)
 		{
-			if (ft_atoi(argv[i]) > ft_atoi(argv[j]))
+			if (head->number == INT_MIN)
+				*(int *) &head->index = 1;
+			if (head->number > current_larger && head->index == 0)
 			{
-				tmp = argv[i];
-				argv[i] = argv[j];
-				argv[j] = tmp;
+				current_larger = head->number;
+				larger = head;
 			}
+			head = head->next;
 		}
+		if (larger != NULL)
+			*(int *) &larger->index = stack_size;
+		head = head_ref;
+		stack_size--;
 	}
-}
-
-static	t_node	*search_node(t_node *head, int number)
-{
-	while (head)
-	{
-		if (head->number == number)
-			return (head);
-		head = head->next;
-	}
-	return (NULL);
 }
