@@ -20,6 +20,15 @@ all: $(OBJECTS_FOLDER) libft $(NAME)
 $(OBJECTS_FOLDER):
 	mkdir $(OBJECTS_FOLDER)
 
+libft:
+	@make -s -C ./libft/
+
+$(NAME): $(MANDATORY_OBJECTS) $(HEADERS)push_swap.h
+	cc $(CFLAGS) $(MANDATORY_OBJECTS) $(LIBFT) -o $(NAME)
+
+$(OBJECTS_FOLDER)%.o: ./mandatory/%.c $(HEADERS)push_swap.h
+	cc $(CFLAGS) -c $< -o $@ -I $(HEADERS)
+
 $(OBJECTS_FOLDER)%.o: mandatory/movements/%.c $(HEADERS)push_swap.h
 	cc $(CFLAGS) -c $< -o $@ -I $(HEADERS)
 
@@ -27,9 +36,6 @@ $(OBJECTS_FOLDER)%.o: mandatory/algorithm/%.c $(HEADERS)push_swap.h
 	cc $(CFLAGS) -c $< -o $@ -I $(HEADERS)
 
 $(OBJECTS_FOLDER)%.o: mandatory/init/%.c $(HEADERS)push_swap.h
-	cc $(CFLAGS) -c $< -o $@ -I $(HEADERS)
-
-$(OBJECTS_FOLDER)%.o: ./mandatory/%.c $(HEADERS)push_swap.h
 	cc $(CFLAGS) -c $< -o $@ -I $(HEADERS)
 
 bonus: libft $(BONUS)
@@ -45,12 +51,6 @@ $(OBJECTS_FOLDER)%.o: bonus/movements/%.c $(HEADERS)checker_bonus.h
 
 $(OBJECTS_FOLDER)%.o: bonus/validations/%.c $(HEADERS)checker_bonus.h
 	cc $(CFLAGS) -c $< -o $@ -I $(HEADERS)
-
-libft:
-	@make -s -C ./libft/
-
-$(NAME): $(MANDATORY_OBJECTS) $(HEADERS)push_swap.h
-	cc $(CFLAGS) $(MANDATORY_OBJECTS) $(LIBFT) -o $(NAME)
 
 clean:
 	rm -rf $(OBJECTS_FOLDER)
