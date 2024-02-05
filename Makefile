@@ -3,54 +3,57 @@ BONUS = checker
 LIBFT = ./libft/libft.a
 CFLAGS = -Wall -Werror -Wextra -g3 -O0
 
+OBJECTS_FOLDER = ./obj/
+HEADERS = ./includes/
+
 MANDATORY_SOURCES = main.c linked_lists.c check_args.c initializations.c \
 	swap.c push.c reverse_rotate.c rotate.c set_node_indexes.c utils.c \
 	set_target_position.c set_costs.c sort.c perform_movements.c
-MANDATORY_OBJECTS = $(addprefix ./obj/,$(MANDATORY_SOURCES:.c=.o))
+MANDATORY_OBJECTS = $(addprefix $(OBJECTS_FOLDER),$(MANDATORY_SOURCES:.c=.o))
 
 BONUS_SOURCES = main_bonus.c push_bonus.c reverse_rotate_bonus.c rotate_bonus.c \
 	swap_bonus.c linked_lists_bonus.c check_args_bonus.c
-BONUS_OBJECTS = $(addprefix ./obj/,$(BONUS_SOURCES:.c=.o))
+BONUS_OBJECTS = $(addprefix $(OBJECTS_FOLDER),$(BONUS_SOURCES:.c=.o))
 
-all: ./obj/ libft $(NAME)
+all: $(OBJECTS_FOLDER) libft $(NAME)
 
-./obj/:
-	mkdir ./obj/
+$(OBJECTS_FOLDER):
+	mkdir $(OBJECTS_FOLDER)
 
-./obj/%.o: mandatory/movements/%.c ./includes/push_swap.h
-	cc $(CFLAGS) -c $< -o $@ -I ./includes/
+$(OBJECTS_FOLDER)%.o: mandatory/movements/%.c $(HEADERS)push_swap.h
+	cc $(CFLAGS) -c $< -o $@ -I $(HEADERS)
 
-./obj/%.o: mandatory/algorithm/%.c ./includes/push_swap.h
-	cc $(CFLAGS) -c $< -o $@ -I ./includes/
+$(OBJECTS_FOLDER)%.o: mandatory/algorithm/%.c $(HEADERS)push_swap.h
+	cc $(CFLAGS) -c $< -o $@ -I $(HEADERS)
 
-./obj/%.o: mandatory/init/%.c ./includes/push_swap.h
-	cc $(CFLAGS) -c $< -o $@ -I ./includes/
+$(OBJECTS_FOLDER)%.o: mandatory/init/%.c $(HEADERS)push_swap.h
+	cc $(CFLAGS) -c $< -o $@ -I $(HEADERS)
 
-./obj/%.o: ./mandatory/%.c ./includes/push_swap.h
-	cc $(CFLAGS) -c $< -o $@ -I ./includes/
+$(OBJECTS_FOLDER)%.o: ./mandatory/%.c $(HEADERS)push_swap.h
+	cc $(CFLAGS) -c $< -o $@ -I $(HEADERS)
 
 bonus: libft $(BONUS)
 
-$(BONUS): $(BONUS_OBJECTS) ./includes/checker_bonus.h
+$(BONUS): $(BONUS_OBJECTS) $(HEADERS)checker_bonus.h
 	cc $(CFLAGS) $(BONUS_OBJECTS) $(LIBFT) -o $(BONUS)
 
-./obj/%.o: bonus/%.c ./includes/checker_bonus.h
-	cc $(CFLAGS) -c $< -o $@ -I ./includes/
+$(OBJECTS_FOLDER)%.o: bonus/%.c $(HEADERS)checker_bonus.h
+	cc $(CFLAGS) -c $< -o $@ -I $(HEADERS)
 
-./obj/%.o: bonus/movements/%.c ./includes/checker_bonus.h
-	cc $(CFLAGS) -c $< -o $@ -I ./includes/
+$(OBJECTS_FOLDER)%.o: bonus/movements/%.c $(HEADERS)checker_bonus.h
+	cc $(CFLAGS) -c $< -o $@ -I $(HEADERS)
 
-./obj/%.o: bonus/validations/%.c ./includes/checker_bonus.h
-	cc $(CFLAGS) -c $< -o $@ -I ./includes/
+$(OBJECTS_FOLDER)%.o: bonus/validations/%.c $(HEADERS)checker_bonus.h
+	cc $(CFLAGS) -c $< -o $@ -I $(HEADERS)
 
 libft:
 	@make -s -C ./libft/
 
-$(NAME): $(MANDATORY_OBJECTS) ./includes/push_swap.h
+$(NAME): $(MANDATORY_OBJECTS) $(HEADERS)push_swap.h
 	cc $(CFLAGS) $(MANDATORY_OBJECTS) $(LIBFT) -o $(NAME)
 
 clean:
-	rm -rf ./obj/
+	rm -rf $(OBJECTS_FOLDER)
 
 fclean: clean
 	rm -rf $(NAME) $(BONUS)
