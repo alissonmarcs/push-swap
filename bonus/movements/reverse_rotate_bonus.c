@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*   reverse_rotate_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: almarcos <almarcos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 16:43:23 by almarcos          #+#    #+#             */
-/*   Updated: 2024/02/02 16:43:24 by almarcos         ###   ########.fr       */
+/*   Updated: 2024/02/05 19:50:42 by almarcos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,18 +29,15 @@ static	void	reverse_rotate(t_node **head)
 void	rra(t_node **stack_a)
 {
 	reverse_rotate(stack_a);
-	ft_putstr_fd("rra\n", 1);
 }
 
 void	rrb(t_node **stack_b)
 {
 	reverse_rotate(stack_b);
-	ft_putstr_fd("rrb\n", 1);
 }
 
 void	rrr(t_node **stack_a, t_node **stack_b)
 {
 	reverse_rotate(stack_a);
 	reverse_rotate(stack_b);
-	ft_putstr_fd("rrr\n", 1);
 }

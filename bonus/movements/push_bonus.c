@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   push_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: almarcos <almarcos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 16:43:18 by almarcos          #+#    #+#             */
-/*   Updated: 2024/02/02 16:43:19 by almarcos         ###   ########.fr       */
+/*   Updated: 2024/02/05 19:50:39 by almarcos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,9 @@ static	void	push(t_node **source, t_node **dest)
 void	pa(t_node **stack_a, t_node **stack_b)
 {
 	push(stack_b, stack_a);
-	ft_putstr_fd("pa\n", 1);
 }
 
 void	pb(t_node **stack_a, t_node **stack_b)
 {
 	push(stack_a, stack_b);
-	ft_putstr_fd("pb\n", 1);
 }
