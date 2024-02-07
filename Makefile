@@ -12,7 +12,7 @@ MANDATORY_SOURCES = main.c linked_lists.c check_args.c initializations.c \
 MANDATORY_OBJECTS = $(addprefix $(OBJECTS_FOLDER),$(MANDATORY_SOURCES:.c=.o))
 
 BONUS_SOURCES = main_bonus.c push_bonus.c reverse_rotate_bonus.c rotate_bonus.c \
-	swap_bonus.c linked_lists_bonus.c check_args_bonus.c
+	swap_bonus.c linked_lists_bonus.c check_args_bonus.c utils_bonus.c
 BONUS_OBJECTS = $(addprefix $(OBJECTS_FOLDER),$(BONUS_SOURCES:.c=.o))
 
 all: $(OBJECTS_FOLDER) libft $(NAME)
