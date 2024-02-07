@@ -38,7 +38,7 @@ $(OBJECTS_FOLDER)%.o: mandatory/algorithm/%.c $(HEADERS)push_swap.h
 $(OBJECTS_FOLDER)%.o: mandatory/init/%.c $(HEADERS)push_swap.h
 	cc $(CFLAGS) -c $< -o $@ -I $(HEADERS)
 
-bonus: libft $(BONUS)
+bonus: $(OBJECTS_FOLDER) libft $(BONUS)
 
 $(BONUS): $(BONUS_OBJECTS) $(HEADERS)checker_bonus.h
 	cc $(CFLAGS) $(BONUS_OBJECTS) $(LIBFT) -o $(BONUS)
