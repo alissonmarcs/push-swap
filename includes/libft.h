@@ -90,7 +90,7 @@ void				ft_free_split(char **split);
 // *** GNL ***
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 15
+#  define BUFFER_SIZE 5
 # endif
 
 char				*get_next_line(int fd);
