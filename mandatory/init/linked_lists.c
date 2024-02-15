@@ -6,7 +6,7 @@
 /*   By: almarcos <almarcos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 16:25:15 by almarcos          #+#    #+#             */
-/*   Updated: 2024/02/02 16:25:16 by almarcos         ###   ########.fr       */
+/*   Updated: 2024/02/15 17:43:27 by almarcos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,18 +33,15 @@ void	link_node(t_node **head, t_node *node)
 		*head = node;
 		return ;
 	}
-	last_node = get_last_node(head);
+	last_node = get_last_node(*head);
 	last_node->next = node;
 }
 
-t_node	*get_last_node(t_node **head)
+t_node	*get_last_node(t_node *head)
 {
-	t_node	*last;
-
-	last = *head;
-	while (last->next != NULL)
-		last = last->next;
-	return (last);
+	while (head->next != NULL)
+		head = head->next;
+	return (head);
 }
 
 void	free_list(t_node **head)
