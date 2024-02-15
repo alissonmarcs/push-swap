@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   checker_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: almarcos <almarcos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 08:58:24 by almarcos          #+#    #+#             */
-/*   Updated: 2024/02/02 16:44:45 by almarcos         ###   ########.fr       */
+/*   Updated: 2024/02/15 15:47:52 by almarcos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
+#ifndef CHECKER_BONUS_H
 
-# define PUSH_SWAP_H
+# define CHECKER_BONUS_H
 
 # include <libft.h>
 
