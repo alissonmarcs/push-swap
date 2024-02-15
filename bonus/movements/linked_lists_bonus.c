@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   linked_lists.c                                     :+:      :+:    :+:   */
+/*   linked_lists_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: almarcos <almarcos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 16:25:15 by almarcos          #+#    #+#             */
-/*   Updated: 2024/02/02 16:25:16 by almarcos         ###   ########.fr       */
+/*   Updated: 2024/02/15 17:15:40 by almarcos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <push_swap.h>
+#include <checker_bonus.h>
 
 t_node	*create_node(long number)
 {
