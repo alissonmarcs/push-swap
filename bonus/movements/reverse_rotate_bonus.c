@@ -28,16 +28,22 @@ static	void	reverse_rotate(t_node **head)
 
 void	rra(t_node **stack_a)
 {
+	if (!(*stack_a)->next)
+		return ;
 	reverse_rotate(stack_a);
 }
 
 void	rrb(t_node **stack_b)
 {
+	if (!(*stack_b)->next)
+		return ;
 	reverse_rotate(stack_b);
 }
 
 void	rrr(t_node **stack_a, t_node **stack_b)
 {
+	if (!(*stack_a)->next || !(*stack_b)->next)
+		return ;
 	reverse_rotate(stack_a);
 	reverse_rotate(stack_b);
 }
