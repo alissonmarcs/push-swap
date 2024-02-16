@@ -6,7 +6,7 @@
 /*   By: almarcos <almarcos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 08:58:24 by almarcos          #+#    #+#             */
-/*   Updated: 2024/02/15 15:47:52 by almarcos         ###   ########.fr       */
+/*   Updated: 2024/02/15 18:28:50 by almarcos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ struct s_node
 };
 
 t_node		*create_node(long number);
-t_node		*get_last_node(t_node **head);
+t_node		*get_last_node(t_node *head);
 void		link_node(t_node **head, t_node *node);
 void		free_list(t_node **head);
 
