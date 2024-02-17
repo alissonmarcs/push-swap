@@ -39,6 +39,8 @@ void	link_node(t_node **head, t_node *node)
 
 t_node	*get_last_node(t_node *head)
 {
+	if (!head)
+		return (NULL);
 	while (head->next != NULL)
 		head = head->next;
 	return (head);

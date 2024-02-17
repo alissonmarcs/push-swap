@@ -18,6 +18,8 @@ static	void	rotate(t_node **head)
 	t_node	*new_tail;
 	t_node	*current_tail;
 
+	if (!*head || !(*head)->next)
+		return ;
 	current_tail = get_last_node(*head);
 	new_tail = *head;
 	update_head = (*head)->next;

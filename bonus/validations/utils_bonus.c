@@ -68,6 +68,8 @@ void	fill_stack_a(t_node **head, char *argv[])
 
 short	is_sort(t_node *head)
 {
+	if (!head)
+		return (0);
 	while (1)
 	{
 		if (head->next == NULL)

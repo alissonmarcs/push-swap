@@ -18,6 +18,8 @@ static	void	swap(t_node **head)
 	t_node	*old_head;
 	t_node	*third_node;
 
+	if (!*head || !(*head)->next)
+		return ;
 	old_head = *head;
 	new_head = (*head)->next;
 	third_node = (*head)->next->next;

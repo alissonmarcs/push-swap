@@ -16,6 +16,8 @@ static	void	push(t_node **source, t_node **dest)
 {
 	t_node	*head_dest;
 
+	if (!*source)
+		return ;
 	head_dest = *source;
 	*source = (*source)->next;
 	head_dest->next = *dest;
