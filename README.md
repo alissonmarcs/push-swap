@@ -43,7 +43,8 @@ ra
 ### Explanation of the commands
 
 We have two stacks named `a` and `b` and we must populate `a` with the sequence passed as argument.
-We must use the two stacks and the following commands to sort the numbers:
+We must use the two stacks and the commands bellow to sort the numbers. Of course, we cannot left
+numbers in `b` and the sequence in `a` must be sorted.
 
 | Movement | Description                                                    |
 |----------|----------------------------------------------------------------|
@@ -83,7 +84,8 @@ OK
 ```
 
 You can also use the checker to try your self to sort an sequence of numbers.
-Execute `./checker` with a few numbers and type your commands:
+Execute `./checker` with a few numbers and type your commands. When you
+terminate, type `ctrl + d` to finish the checker.
 
 ```shell
 ./checker 5 4 1 6 9
