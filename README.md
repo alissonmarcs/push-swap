@@ -20,7 +20,7 @@ make bonus
 
 ### Mandatory part
 
-`./push_swap` is the mandatory project what will sort the numbers. Example of use:
+`./push_swap` is the mandatory project that will sort the numbers. Example of use:
 
 ```shell
 ./push_swap 2 1
