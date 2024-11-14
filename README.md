@@ -12,10 +12,10 @@
 ## How to compile and use
 
 ```shell
-git clone https://github.com/alissonmarcs/push-swap
-cd push-swap
-make 
-make bonus
+$ git clone https://github.com/alissonmarcs/push-swap
+$ cd push-swap
+$ make 
+$ make bonus
 ```
 
 ### Mandatory part
@@ -23,7 +23,7 @@ make bonus
 `./push_swap` is the mandatory project that will sort the numbers. Example of use:
 
 ```shell
-./push_swap 2 1
+$ ./push_swap 2 1
 sa
 ```
 
@@ -31,7 +31,7 @@ sa
 to sort the sequence. Example of an more complex sequence:
 
 ```shell
-./push_swap 2 1 3 -1
+$ ./push_swap 2 1 3 -1
 pb
 rra
 rra
@@ -65,7 +65,7 @@ numbers in `b` and the sequence in `a` must be sorted.
 Tip to generate random numbers:
 
 ```shell
-./push_swap `seq -2500 2500 | shuf -n 10`
+$ ./push_swap `seq -2500 2500 | shuf -n 10`
 ```
 
 - `seq -2500 2500` - gerenare an ordened sequence of numbers.
@@ -79,7 +79,7 @@ Tip to generate random numbers:
 `./push_swap` produces is correct. Example of use:
 
 ```shell
-numbers=$(seq -100 100 | shuf -n 30); ./push_swap $numbers | ./checker $numbers
+$ numbers=$(seq -100 100 | shuf -n 30); ./push_swap $numbers | ./checker $numbers
 OK
 ```
 
@@ -88,7 +88,7 @@ Execute `./checker` with a few numbers and type your commands. When you
 terminate, type `ctrl + d` to finish the checker.
 
 ```shell
-./checker 5 4 1 6 9
+$ ./checker 5 4 1 6 9
 pb
 pb
 pb
