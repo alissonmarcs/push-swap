@@ -18,11 +18,48 @@ make
 make bonus
 ```
 
-`./push_swap` is the mandatory project what will sort the numbers.
+### Mandatory part
+
+`./push_swap` is the mandatory project what will sort the numbers. Example of use:
 
 ```shell
-./push_swap 9 0 1 5 2 3 10
+./push_swap 2 1
+sa
 ```
+
+`2 1` are the numbers to be sorted, and `sa` is is the movement that the program find out
+to sort the sequence. Example of an more complex sequence:
+
+```shell
+./push_swap 2 1 3 -1
+pb
+rra
+rra
+pa
+ra
+ra
+```
+
+### Explanation of the commands
+
+We have two stacks named `a` and `b` and we must populate `a` with the sequence passed as argument.
+We must use the two stacks and the following commands to sort the numbers:
+
+| Movement | Description                                                    |
+|----------|----------------------------------------------------------------|
+| sa       | swap two first elements of `a`                                   |
+| sb       | swap two first elements of `b`                                   |
+| ss       | sa and sb at the same time                                     |
+| pa       | take the first of `b` and put it in top of `a`                     |
+| pb       | take the first of a and put it in top of `b`                     |
+| ra       | shift up all elements of `a` by 1 (the first becomes the last)   |
+| rb       | shift up all elements of `b` by 1 (the first becomes the last)   |
+| rr       | ra and rb at the same time                                     |
+| rra      | shift down all elements of `a` by 1 (the last becomes the first) |
+| rrb      | shift down all elements of `b` by 1 (the last becomes the first) |
+| rrr      | rra and rrb at the same time                                   |
+
+----
 
 Tip to generate random numbers:
 
@@ -33,12 +70,30 @@ Tip to generate random numbers:
 - `seq -2500 2500` - gerenare an ordened sequence of numbers.
 - `shuf -n 10` - capture ten numbers from stdin and randomize these numbers.
 
-`./checker` is the bonus project what will check if the commands that `./push_swap` produces is correct.
+---
+
+### Bonus
+
+`./checker` is the bonus project what will check if the commands that
+`./push_swap` produces is correct. Example of use:
 
 ```shell
-
+numbers=$(seq -100 100 | shuf -n 30); ./push_swap $numbers | ./checker $numbers
+OK
 ```
 
-## What are rules for sort these numners ?
+You can also use the checker to try your self to sort an sequence of numbers.
+Execute `./checker` with a few numbers and type your commands:
 
-We have two stacks named `A` and `B`, and we must populate A with numbers received as arguments.
+```shell
+./checker 5 4 1 6 9
+pb
+pb
+pb
+rrb
+pa
+rrb
+pa
+pa
+OK
+```
