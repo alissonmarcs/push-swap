@@ -1,6 +1,6 @@
 <div align="center">
 	<h1>Push swap</h1>
-	<img src="https://raw.githubusercontent.com/alissonmarcs/alissonmarcs/main/images/pipexm.png" alt="Pipex project badge of 42"/>
+	<img src="https://i.imgur.com/CYEkMXq.png" alt="Push swap project badge of 42"/>
 	<p align="center">We need create a program to sort numbers. We are allowed to use only an specific set of moviments to sort these numbers.</p>
 </div>
 
